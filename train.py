@@ -48,11 +48,11 @@ model.classifier = nn.Sequential(nn.Linear(1024, 256),
 
 criterion = nn.NLLLoss()
 
-optimizer = optim.Adam(model.classifier.parameters(), lr=0.003)
+optimizer = optim.Adam(model.classifier.parameters(), lr=args.learning_rate)
 
 model.to(device);
 
-epochs = 1
+epochs = args.epochs
 steps = 0
 running_loss = 0
 print_every = 5
